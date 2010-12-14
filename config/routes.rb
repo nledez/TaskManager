@@ -1,11 +1,6 @@
 TaskManager::Application.routes.draw do
-  get "users/index"
-
-  get "users/show"
-
-  get "users/destroy"
-
   devise_for :users
+  resources :users, :only => [:index, :show, :destroy]
 
   resources :projects
 
