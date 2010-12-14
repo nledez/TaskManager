@@ -10,7 +10,7 @@
     <div class="inner">
       <table class="table">
         <tr>             
-          <th class="first">ID</th>
+          <th class="first">User</th>
                     <th>
             <%= t("activerecord.attributes.project.title", :default => t("activerecord.labels.title", :default => "Title")) %>
           </th>
@@ -20,7 +20,7 @@
         <% @projects.each do |project| -%>
         <tr class="<%= cycle("odd", "even") %>">
           <td>
-            <%= project.id %>
+            <%= project.user.nil? ? "" : project.user.email %>
           </td>
                     <td>
             <%= link_to project.title, project_path(project) %>

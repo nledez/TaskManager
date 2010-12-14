@@ -10,6 +10,11 @@
     <div class="inner">
       
         <p>
+          <b><%= t("activerecord.attributes.project.user.email", :default => t("activerecord.labels.title", :default => "User")) %>:</b>
+          <%= @project.user.nil? ? "" : @project.user.email %>
+        </p>
+
+        <p>
           <b><%= t("activerecord.attributes.project.title", :default => t("activerecord.labels.title", :default => "Title")) %>:</b>
           <%= @project.title %>
         </p>
